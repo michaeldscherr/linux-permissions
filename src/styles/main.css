@@ -1,0 +1,18 @@
+body {
+  background-color: #eee;
+}
+.main-nav {
+  lost-center: 980px;
+  padding: 15px;
+}
+.main-nav__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.main-nav__item {
+  display: inline-block;
+}
+.main-nav__item + .main-nav__item {
+  padding-left: 10px;
+}
