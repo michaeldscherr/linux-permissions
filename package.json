@@ -1,0 +1,26 @@
+{
+  "name": "linux-permissions",
+  "version": "0.0.0",
+  "description": "linux ownership & permisssions generator & wiki",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/michaeldscherr/linux-permissions.git"
+  },
+  "keywords": [
+    "linux",
+    "chmod",
+    "chown",
+    "permissions",
+    "wiki"
+  ],
+  "author": "Michael Scherr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/michaeldscherr/linux-permissions/issues"
+  },
+  "homepage": "https://gitlab.com/michaeldscherr/linux-permissions#README"
+}
