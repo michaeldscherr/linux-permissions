@@ -1,2 +1,3 @@
-public/
+.htaccess
+dist/
 node_modules/

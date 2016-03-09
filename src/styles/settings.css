@@ -1,0 +1,24 @@
+/* __settings__ */
+
+:root{
+
+	/* generic */
+	--basePadding: 2em;
+
+	/* __colors__ */
+	--colorBlack: #282828;
+	--colorOrange: #fe8019;
+
+	/* __fonts__ */
+	--fontPrimary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+	/* __viewports */
+	@custom-media --smUp (width >= 768px);
+	@custom-media --mdUp (width >= 992px);
+	@custom-media --lgUp (width >= 1200px);
+	@custom-media --xsOnly (width < 768px);
+	@custom-media --smDown (width < 992px);
+	@custom-media --mdDown (width < 1200px);
+	@custom-media --smOnly (width >= 768px) and (width <= 992px);
+	@custom-media --mdOnly (width >= 992px) and (width <= 1200px);
+}

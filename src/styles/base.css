@@ -1,0 +1,21 @@
+
+/* __generic__ */
+html{
+	box-sizing: border-box;
+	font-size: 100%;
+	text-rendering: optimizelegibility;
+}
+html *{
+	box-sizing: border-box;
+}
+html *:before,
+html *:after{
+	box-sizing: inherit;
+}
+
+body{
+	background-color: #fff;
+	color: var(--colorBlack);
+	font-family: var(--fontPrimary);
+	margin: 0;
+}

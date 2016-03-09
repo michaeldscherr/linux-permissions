@@ -1,0 +1,14 @@
+{
+	"compress": "true",
+	"map": "true",
+	"use": [
+		"postcss-import",
+		"cssnext",
+		"autoprefixer",
+		"lost",
+		"cssnano",
+		"postcss-sorting",
+		"css-mqpacker"
+	]
+}
+
