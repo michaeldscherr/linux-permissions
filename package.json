@@ -7,6 +7,7 @@
     "removedir": "rm -rf dist/styles && rm -rf dist/scripts && rm -f dist/index.php",
     "makedir": "mkdir -p dist/styles && mkdir -p dist/scripts",
     "serve": "browser-sync start --no-ghost-mode --proxy linux-permissions.test --files 'dist/scripts/main.min.js, dist/styles/main.min.css, index.html'",
+    "serve:dev": "browser-sync start --no-ghost-mode --proxy linux-permissions.dev --files 'dist/scripts/main.min.js, dist/styles/main.min.css, index.html'",
     "postcss": "postcss -c postcss.json -i src/styles/main.css | exorcist dist/styles/main.min.css.map > dist/styles/main.min.css",
     "browserify": "browserify -e src/scripts/main.js -d -t [ babelify --presets [ es2015 ] --only src/scripts ] | exorcist dist/scripts/main.js.map > dist/scripts/main.js",
     "uglify": "uglifyjs dist/scripts/main.js --screw-ie8 -m -c -o dist/scripts/main.min.js --source-map dist/scripts/main.min.js.map --source-map-url main.min.js.map --in-source-map dist/scripts/main.js.map",
@@ -15,7 +16,8 @@
     "build:all": "npm run removedir && npm run makedir && npm run build:styles && npm run build:scripts",
     "watch:styles": "onchange 'src/styles/**/**.css' -- npm run build:styles",
     "watch:scripts": "onchange 'src/scripts/**/**.js' -- npm run build:scripts",
-    "watch:all": "npm run build:all && parallelshell 'npm run serve' 'npm run watch:styles' 'npm run watch:scripts'"
+    "watch:all": "npm run build:all && parallelshell 'npm run serve' 'npm run watch:styles' 'npm run watch:scripts'",
+    "watch:all:dev": "npm run build:all && parallelshell 'npm run serve:dev' 'npm run watch:styles' 'npm run watch:scripts'"
   },
   "repository": {
     "type": "git",
