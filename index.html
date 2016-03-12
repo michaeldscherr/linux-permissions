@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Linux Permission &amp; Ownership Generator</title>
+	<link rel="stylesheet" href="dist/styles/main.min.css" />
+</head>
+<body>
+	<header class="main-nav">
+		<div class="main-nav__wrap  -center-primary  u-clearfix">
+			<ul class="main-nav__list">
+				<li class="main-nav__item">
+					<a class="main-nav__link" href="/">Home</a>
+				</li>
+				<li class="main-nav__item">
+					<a class="main-nav__link" href="#permission">Permissions</a>
+				</li>
+				<li class="main-nav__item">
+					<a class="main-nav__link" href="#ownership">Ownership</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<main>
+		<div class="-center-primary">
+			<div class="app" data-role="app">
+				<div class="app__wrap  u-clearfix">
+					<input class="app__input" type="number" name="owner" min="0" max="7" value="7" />
+					<input class="app__input" type="number" name="group" min="0" max="7" value="7" />
+					<input class="app__input" type="number" name="world" min="0" max="7" value="5" />
+				</div>
+			</div>
+			<table class="legend" data-role="legend">
+				<thead class="legend__head">
+					<tr>
+						<th class="legend__th">Permission</th>
+						<th class="legend__th">Owner</th>
+						<th class="legend__th">Group</th>
+						<th class="legend__th">World</th>
+					</tr>
+				</thead>
+				<tbody class="legend_body">
+					<tr>
+						<td class="legend__td">
+							Read (4)
+						</td>
+						<td class="legend__td">
+							<label class="legend__label" for="read_owner">
+								<input type="checkbox" id="read_owner" name="read_owner" />
+							</label>
+						</td>
+						<td class="legend__td">
+							<label class="legend__label" for="read_group">
+								<input type="checkbox" id="read_group" name="read_group" />
+							</label>
+						</td>
+						<td class="legend__td">
+							<label class="legend__label" for="read_world">
+								<input type="checkbox" id="read_world" name="read_world" />
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="legend__td">
+							Write (2)
+						</td>
+						<td class="legend__td">
+							<label class="legend__label" for="write_owner">
+								<input type="checkbox" id="write_owner" name="write_owner" />
+							</label>
+						</td>
+						<td class="legend__td">
+							<label class="legend__label" for="write_group">
+								<input type="checkbox" id="write_group" name="write_group" />
+							</label>
+						</td>
+						<td class="legend__td">
+							<label class="legend__label" for="write_world">
+								<input type="checkbox" id="write_world" name="write_world" />
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="legend__td">
+							Execute (1)
+						</td>
+						<td class="legend__td">
+							<label class="legend__label" for="execute_owner">
+								<input type="checkbox" id="execute_owner" name="execute_owner" />
+							</label>
+						</td>
+						<td class="legend__td">
+							<label class="legend__label" for="execute_group">
+								<input type="checkbox" id="execute_group" name="execute_group" />
+							</label>
+						</td>
+						<td class="legend__td">
+							<label class="legend__label" for="execute_world">
+								<input type="checkbox" id="execute_world" name="execute_world" />
+							</label>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</main>
+	<footer class="main-foot">
+		<div class="main-foot__wrap  -center-primary  u-clearfix">
+			&copy; 2016 / <a class="main-foot__link" href="https://gitlab.com/michaeldscherr/linux-permissions#README">Michael Scherr</a>
+		</div>
+	</footer>
+	<script src="dist/scripts/main.min.js"></script>
+</body>
+</html>
