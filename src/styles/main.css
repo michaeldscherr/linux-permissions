@@ -91,7 +91,9 @@
 
 /* __main-foot__ */
 
-.main-foot{}
+.main-foot{
+	margin-top: 25px;
+}
 .main-foot__link{
 	border-bottom: solid var(--colorBlack) 2px;
 	color: var(--colorBlack);
@@ -113,4 +115,25 @@
 
 .u-clearfix{
 	lost-utility: clearfix;
+}
+
+/* __scope__ */
+
+.s-wysiwyg li{
+	margin-bottom: 10px;
+}
+.s-wysiwyg a{
+	border-bottom: solid var(--colorBlack) 2px;
+	color: var(--colorBlack);
+	text-decoration: none;
+}
+
+@media (--smUp){
+	.s-wysiwyg a{
+		transition: all 150ms ease-in-out;
+	}
+	.s-wysiwyg a:hover{
+		border-bottom-color: var(--colorOrange);
+		color: var(--colorOrange);
+	}
 }
