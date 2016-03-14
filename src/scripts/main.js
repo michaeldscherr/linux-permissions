@@ -1,25 +1,10 @@
+import { transforms } from './transforms';
+
 (function(){
 
 	document.onreadystatechange = () => {
 		if (document.readyState === 'complete') {
 			'use strict'; //eslint-disable-line
-
-			function traversing() {
-				
-			};
-
-			function transforms(){
-				let toBinaryFromInt = (number) => {
-					return Number(number).toString(2);
-				}
-				let toIntFromBinary = (binary) => {
-					return parseInt(binary, 2);
-				}
-				return {
-					toBinaryFromInt,
-					toIntFromBinary
-				};
-			};
 
 			var App = {
 				app: document.querySelectorAll('[data-role="app"]')[0],
@@ -47,14 +32,14 @@
 				},
 				renderLegend() {
 					let modValue = this.getModValue();
-					this.legendColumns.map((column,index) => {
-						let binary = [...transforms().toBinaryFromInt(modValue[index])];
-						while(binary.length < 3){
+					this.legendColumns.map((column, indexCol) => {
+						let binary = [...transforms(modValue[indexCol]).toBinaryFromInt()];
+						while (binary.length < 3){
 							binary.unshift('0');
 						}
-						this.legendRows.map((row,index) => {
+						this.legendRows.map((row, indexRow) => {
 							let checkbox = document.getElementsByName(`${row}_${column}`)[0];
-							let state = (parseInt(binary[index]) === 1) ? true : false;
+							let state = (parseInt(binary[indexRow]) === 1) ? true : false;
 							checkbox.checked = state;
 						});
 					});
@@ -62,25 +47,25 @@
 				renderInputs(e) {
 					let legendValues = this.getLegendValues();
 					let clicked = e.target;
-					let [row, column] = clicked.name.split('_');
+					let column = clicked.name.split('_')[1];
 					let hex = [];
-					for(let [key, value] of legendValues.get(column)){
+					for (let [, value] of legendValues.get(column)){
 						let number = (value[0].checked === true) ? 1 : 0;
 						hex.push(number);
 					}
 					let targetInput = [...this.inputs].filter(input => {
 						return input.name === column;
 					});
-					targetInput[0].value = transforms().toIntFromBinary(hex.join(''));
+					targetInput[0].value = transforms(hex.join('')).toIntFromBinary();
 				},
 				bindEvents() {
 					[...this.inputs].map(input => {
 						input.addEventListener('change', this.renderLegend.bind(this));
 					});
 					this.getLegendValues();
-					for(let value of this.legendValues.values()){
-						for(let [key, value] of value.entries()){
-							value[0].addEventListener('change', this.renderInputs.bind(this));
+					for (let value of this.legendValues.values()){
+						for (let [, radioButton] of value.entries()){
+							radioButton[0].addEventListener('change', this.renderInputs.bind(this));
 						}
 					}
 				},
@@ -95,6 +80,6 @@
 			};
 			App.init();
 		}
-	}
+	};
 
 })();

@@ -11,6 +11,7 @@
     "postcss": "postcss -c postcss.json -i src/styles/main.css | exorcist dist/styles/main.min.css.map > dist/styles/main.min.css",
     "browserify": "browserify -e src/scripts/main.js -d -t [ babelify --presets [ es2015 ] --only src/scripts ] | exorcist dist/scripts/main.js.map > dist/scripts/main.js",
     "uglify": "uglifyjs dist/scripts/main.js --screw-ie8 -m -c -o dist/scripts/main.min.js --source-map dist/scripts/main.min.js.map --source-map-url main.min.js.map --in-source-map dist/scripts/main.js.map",
+	"copyfiles": "copyfiles index.html dist/**/*.min.* public/",
     "build:styles": "npm run postcss",
     "build:scripts": "npm run browserify && npm run uglify",
     "build:all": "npm run removedir && npm run makedir && npm run build:styles && npm run build:scripts",

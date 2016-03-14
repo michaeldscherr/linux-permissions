@@ -84,6 +84,9 @@
 }
 
 @media (--smUp){
+	.legend__checkbox:hover{
+		cursor: pointer;
+	}
 	.legend__label:hover{
 		cursor: pointer;
 	}
