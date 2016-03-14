@@ -1,6 +1,6 @@
 # Linux Permissions Generator
 
-a _created by: Michael Scherr_
+_created by: Michael Scherr_
 
 ## About
 
