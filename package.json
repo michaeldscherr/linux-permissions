@@ -1,6 +1,6 @@
 {
   "name": "linux-permissions",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "linux permisssions generator",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "watch:all": "npm run build:all && parallelshell 'npm run serve' 'npm run watch:styles' 'npm run watch:scripts'",
     "watch:all:dev": "npm run build:all && parallelshell 'npm run serve:dev' 'npm run watch:styles' 'npm run watch:scripts'",
     "create:public": "rm -rf public/ && mkdir public && copyfiles index.html dist/**/** public/",
-	"publish:surge": "npm run create:public && surge -p public/ -d linux-permissions.surge.sh"
+    "publish:surge": "npm run create:public && surge -p public/ -d linux-permissions.surge.sh"
   },
   "repository": {
     "type": "git",
@@ -46,7 +46,7 @@
     "browser-sync": "^2.11.1",
     "browserify": "^13.0.0",
     "copyfiles": "^0.2.1",
-    "css-mqpacker": "^4.0.0",
+    "css-mqpacker": "^4.0.1",
     "cssnano": "^3.5.2",
     "cssnext": "^1.8.4",
     "exorcist": "^0.4.0",
